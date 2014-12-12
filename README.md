@@ -1,0 +1,1 @@
+we are building a software to control the flow of planes at an airport. The planes can land and can take off, so long as the weather is sunny. Occasionally it may be stormy, in which case no planes can land or take off.
