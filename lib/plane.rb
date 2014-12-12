@@ -12,4 +12,8 @@ class Plane
   	@plane
   end
 
+  def land!
+  	@plane = false
+  end
+
 end

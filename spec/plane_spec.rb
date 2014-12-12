@@ -13,11 +13,11 @@ describe Plane do
   	expect(plane).to be_in_the_air
   end
 
-  # it "should be able to land" do
-  # 	plane = Plane.new
-  # 	plane.take_off!
-  # 	plane.land!
-  # 	expect(plane).not_to be_in_the_air
-  # end
+  it "should be able to land" do
+  	plane = Plane.new
+  	plane.take_off!
+  	plane.land!
+  	expect(plane).not_to be_in_the_air
+  end
   
 end
