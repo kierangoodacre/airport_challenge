@@ -8,8 +8,8 @@ class Plane
   	@plane = true
   end
 
-  def taking_off?
+  def in_the_air?
   	@plane
   end
-  
+
 end
