@@ -1,4 +1,4 @@
-class Weather
+module Weather
 	
   def initialize
     @weather = false
@@ -8,12 +8,12 @@ class Weather
     @weather = true
 	end
 
-  def good?
+  def good? 
     @weather
   end
 
   def probability
-    @weather = rand(1..100)
+    @weather = rand(1..101)
   end
 
 end

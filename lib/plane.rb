@@ -1,4 +1,8 @@
+require_relative 'weather'
+
 class Plane
+
+  include Weather
   
   def initialize
   	@plane = false

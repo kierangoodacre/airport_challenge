@@ -21,6 +21,7 @@ describe Plane do
 
   # it "should not be able to take off if weather is bad" do
   #   plane.take_off!
+  #   weather.bad!
   #   expect(plane).not_to be_in_the_air
   # end
 
