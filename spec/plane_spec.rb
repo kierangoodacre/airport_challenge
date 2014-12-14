@@ -1,8 +1,12 @@
 require './lib/plane'
+require 'weather'
+
+# class WeatherForecast; include Weather; end
 
 describe Plane do
 
   let (:plane) {Plane.new}
+  # let (:weather) {WeatherForecast.new}
     
   it 'should not take off after we create it' do
     expect(plane).not_to be_in_the_air
@@ -19,11 +23,17 @@ describe Plane do
   	expect(plane).not_to be_in_the_air
   end
 
-  # it "should not be able to take off if weather is bad" do
+  # it "should not be able to take off in bad weather" do
   #   plane.take_off!
-  #   weather.bad!
-  #   expect(plane).not_to be_in_the_air
+  #   expect { lambda { plane.take_off! }}.to raise_error(Runtime error, "Weather is bad, plane cannot take off")
   # end
+
+
+  # it"should not be able to take off in bad weather" do
+  #   plane.take_off!(weather)
+  #   # expect { lambda { plane.take_off! }}.to raise_error(Runtime error, "Weather is bad, plane cannot take off")
+  # end
+
 
   
 end
