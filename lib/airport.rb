@@ -5,6 +5,7 @@ class Airport
 include Weather
 
 	DEFAULT_CAPACITY = 20
+	attr_reader :capacity
 	
 	def initialize (options = {})
 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
@@ -16,20 +17,21 @@ include Weather
 	end
 
 	def land(plane)
-		raise "Airport is full" if full?
-		raise "Cannot land in bad weather" if self.probability == :bad
-		@planes << plane
-		plane.land!
+		@planes << plane.land! if clear_for(:landing)
 	end
 
 	def take_off(plane)
-		raise "Weather is bad" if self.probability == :bad
-		plane.take_off!
-		@planes.delete(plane)
+		@planes.delete(plane.take_off!) if clear_for(:take_off)
 	end
 
 	def full?
-		plane_count == @capacity
+		plane_count >= capacity
+	end
+
+	def clear_for action
+		raise "Airport is full" if full? and action == :landing
+		raise "Weather is bad" if probability == :bad
+		true
 	end
 
 end

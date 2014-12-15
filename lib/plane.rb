@@ -5,20 +5,21 @@ class Plane
   include Weather
   
   def initialize
-  	@plane = false
+  	@in_the_air = false
   end
 
   def take_off!
-  	# self.probability
-    @plane = true
+    @in_the_air = true
+    self
   end
 
   def in_the_air?
-  	@plane
+  	@in_the_air
   end
 
   def land!
-  	@plane = false
+  	@in_the_air = false
+    self
   end
 
 end

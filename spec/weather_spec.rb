@@ -17,6 +17,16 @@ describe Weather do
 		allow(weather).to receive(:probability).and_return(:good)
 	end
 
+	it "should either be good or bad" do
+		expect([:good,:bad].include?(weather.probability)).to eq true
+	end
+
+	# it "be good and bad eventually" do
+	# 	weathers = []
+	# 	100.times {weathers << weather.probability}
+	# 	expect(weathers.uniq.sort).to eq [:bad, :good]
+	# end
+
 	# it "should have a probability of either good or bad weather" do
  #    weather.probability
 	# 	expect((1..10).include?(weather)).to eq(true)

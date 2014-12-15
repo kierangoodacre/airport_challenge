@@ -13,12 +13,15 @@ module Weather
  #  ends
 
   def probability
-    forecast = rand(1..101)
-    if forecast < 50
-      return :bad
-    else forecast > 50
-      return :good
-    end
+    # forecast = rand(1..101)
+    # if forecast < 10
+    #   return :bad
+    # else forecast > 10
+    #   return :good
+    # end
+
+    rand(1..10) == 1 ? :bad : :good
+
   end
 
 end
