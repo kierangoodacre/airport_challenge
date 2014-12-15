@@ -25,6 +25,17 @@ describe Airport do
 		expect(airport).to be_full
 	end
 
+	it "should check the weather forecats" do
+		allow(airport).to receive(:probability)
+	end
+
+	# it "should refused clearance for take off" do
+	# 	airport.dock(plane)
+	# 	expect(airport.plane_count).to eq(1)
+	# 	airport.cleared(plane)
+	# 	expect ( {lambda airport.cleared(plane)}).to raise_error(RuntimeError, "Weather is bad")
+	# end
+
 	# it"should not be able to take off in bad weather" do
 	# 	plane.take_off!
 	# 	weather.bad!
