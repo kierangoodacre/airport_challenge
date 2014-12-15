@@ -8,12 +8,13 @@ describe Weather do
 	let (:weather) {WeatherForecast.new}
 
 	it "should be able to not have good weather" do
-		weather.bad!
-		expect(weather).to be_good
+		weather.probability
+		allow(weather).to receive(:probability).and_return(:bad)
 	end
 
 	it "should be able to be good weather" do
-		expect(weather).not_to be_good
+		weather.probability
+		allow(weather).to receive(:probability).and_return(:good)
 	end
 
 	# it "should have a probability of either good or bad weather" do

@@ -16,6 +16,7 @@ describe Airport do
 		airport.dock(plane)
 		expect(airport.plane_count).to eq(1)
 		airport.cleared(plane)
+		allow(airport).to receive(:probability).and_return(:bad)
 		expect(airport.plane_count).to eq(0)
 	end
 
@@ -29,12 +30,14 @@ describe Airport do
 		allow(airport).to receive(:probability)
 	end
 
-	# it "should refused clearance for take off" do
-	# 	airport.dock(plane)
-	# 	expect(airport.plane_count).to eq(1)
-	# 	airport.cleared(plane)
-	# 	expect ( {lambda airport.cleared(plane)}).to raise_error(RuntimeError, "Weather is bad")
-	# end
+	it "should refuse clearance for take off in bad weather" do
+		expect(airport).to receive(:probability).and_return(:bad)
+		airport.dock(plane)
+		expect(airport.plane_count).to eq(1)
+		expect{ airport.cleared(plane) }.to raise_error(RuntimeError, "Weather is bad")
+	end
+
+	# expect(lambda {holder.release('banana')}).to raise_error(RuntimeError, "banana is not a bike"
 
 	# it"should not be able to take off in bad weather" do
 	# 	plane.take_off!

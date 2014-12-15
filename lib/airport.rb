@@ -20,6 +20,8 @@ include Weather
 	end
 
 	def cleared(plane)
+		raise "Weather is bad" if self.probability == :bad
+		plane.take_off!
 		@planes.delete(plane)
 	end
 

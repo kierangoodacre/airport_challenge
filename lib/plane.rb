@@ -9,7 +9,7 @@ class Plane
   end
 
   def take_off!
-  	# @weather.probability
+  	# self.probability
     @plane = true
   end
 

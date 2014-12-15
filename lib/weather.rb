@@ -1,30 +1,25 @@
 module Weather
 	
-  def initialize
-    @weather = false
-  end
+ #  def initialize
+ #    @weather = false
+ #  end
 
-	def bad!
-    @weather = true
-	end
+	# def bad!
+ #    @weather = true
+	# end
 
-  def good? 
-    @weather
-  end
+ #  def good? 
+ #    @weather
+ #  ends
 
   def probability
     forecast = rand(1..101)
     if forecast < 10
-      @weather.bad!
+      return :bad
     else forecast > 10
-      @weather.good?
+      return :good
     end
   end
-    # if @weather = inlude?(1..90)
-    #   false
-    # else @weather = inlcude?(91..101)
-    #   true
-    # end
 
 end
 
