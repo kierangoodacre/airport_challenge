@@ -14,9 +14,9 @@ module Weather
 
   def probability
     forecast = rand(1..101)
-    if forecast < 10
+    if forecast < 50
       return :bad
-    else forecast > 10
+    else forecast > 50
       return :good
     end
   end
